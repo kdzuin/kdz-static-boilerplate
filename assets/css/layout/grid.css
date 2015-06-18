@@ -1,0 +1,8 @@
+.page {
+    padding: 30px;
+}
+
+.grid {
+    display: flex;
+    align-items: stretch;
+}
