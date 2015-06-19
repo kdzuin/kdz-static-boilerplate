@@ -2,9 +2,9 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
 	grunt.initConfig({
 		/* css tasks */
@@ -54,18 +54,27 @@ module.exports = function (grunt) {
 				tasks: ['concat']
 			}
 		},
-		connect: {
-			test: {
+		browserSync: {
+			dev: {
+				bsFiles: {
+					src: [
+						'public/**/*',
+						'public/**/*',
+					]
+				},
 				options: {
-					port: 8000,
-					keepalive: true,
-					base: './public/'
+					watchTask: true,
+					server: {
+						baseDir: "./public/"
+					}
 				}
 			}
 		}
 	});
 
-	grunt.registerTask('build', ['clean', 'postcss', 'concat']);
 	grunt.registerTask('default', ['build', 'watch']);
+
+	grunt.registerTask('build', ['clean', 'postcss', 'concat']);
+	grunt.registerTask('server', ['build', 'browserSync', 'watch'])
 
 };

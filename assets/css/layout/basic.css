@@ -88,7 +88,7 @@ mark {
 body {
     direction: ltr;
     overflow-y: scroll;
-    min-width: 1140px;
+    min-width: 320px;
     height: 100%;
     background: #fff;
     color: #234;
