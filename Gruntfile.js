@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-browser-sync');
+	grunt.loadNpmTasks('grunt-zetzer');
 
 	grunt.initConfig({
 		/* css tasks */
@@ -37,11 +38,39 @@ module.exports = function (grunt) {
 		},
 
 
+		/* templates tasks */
+		zetzer: {
+			build: {
+				options: {
+					templates: 'assets/tpl/',
+					partials: 'assets/tpl/'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: "assets/tpl/",
+						src: "*.html",
+						dest: "public",
+						ext: ".html",
+					},
+					{
+						expand: true,
+						cwd: "assets/tpl/",
+						src: "*.dot.md",
+						dest: "public",
+						ext: ".html",
+					}
+				]
+			}
+		},
+
+
 		/* service tasks */
 		clean: {
 			files: [
 				'public/css/**/*.css',
-				'public/js/**/*.js'
+				'public/js/**/*.js',
+				'public/*.html',
 			]
 		},
 		watch: {
@@ -52,13 +81,16 @@ module.exports = function (grunt) {
 			js: {
 				files: 'assets/js/**/*.css',
 				tasks: ['concat']
+			},
+			tpl: {
+				files: 'assets/tpl/**/*',
+				tasks: ['zetzer']
 			}
 		},
 		browserSync: {
 			dev: {
 				bsFiles: {
 					src: [
-						'public/**/*',
 						'public/**/*',
 					]
 				},
@@ -74,7 +106,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', ['build', 'watch']);
 
-	grunt.registerTask('build', ['clean', 'postcss', 'concat']);
+	grunt.registerTask('build', ['clean', 'postcss', 'concat', 'zetzer']);
 	grunt.registerTask('server', ['build', 'browserSync', 'watch'])
 
 };
