@@ -1,0 +1,13 @@
+/* helpers */
+.is-visible {
+    display: inherit;
+    visibility: visible;
+}
+.is-hidden {
+    display: none;
+}
+.is-invisible {
+    display: inherit;
+    visibility: hidden;
+    opacity: 0;
+}

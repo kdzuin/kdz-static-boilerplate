@@ -1,2 +1,4 @@
 @import "layout/basic.css";
+@import "layout/helpers.css";
+@import "layout/typography.css";
 @import "layout/grid.css";
