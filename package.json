@@ -1,7 +1,7 @@
 {
-  "name": "static_boilerplate",
+  "name": "kdz-static-boilerplate",
   "version": "1.0.0",
-  "description": "Boliterplate for static site with a number of plugins",
+  "description": "Boilerplate for static site",
   "author": "Konstantin Dzuin",
   "dependencies": {
     "autoprefixer-core": "^5.2.0",
@@ -15,5 +15,10 @@
     "grunt-postcss": "^0.5.1",
     "grunt-zetzer": "^2.0.0",
     "postcss-import": "^6.0.0"
-  }
+  },
+  "keywords": [
+    "generator",
+    "static",
+    "boilerplate"
+  ]
 }
