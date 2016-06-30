@@ -16,6 +16,10 @@
     "grunt-zetzer": "^2.0.0",
     "postcss-import": "^6.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kdzuin/static-website-generator"
+  },
   "keywords": [
     "generator",
     "static",
