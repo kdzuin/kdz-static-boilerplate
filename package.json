@@ -1,6 +1,6 @@
 {
   "name": "kdz-static-boilerplate",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Boilerplate for static site",
   "author": "Konstantin Dzuin",
   "dependencies": {
