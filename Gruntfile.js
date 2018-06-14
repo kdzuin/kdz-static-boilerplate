@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 				tasks: ['postcss']
 			},
 			js: {
-				files: 'assets/js/**/*.css',
+				files: 'assets/js/**/*.js',
 				tasks: ['concat']
 			},
 			tpl: {
